@@ -1,0 +1,20 @@
+# Скопируйте этот файл в .env и заполните своими данными
+
+# Telegram Bot Token (получить у @BotFather)
+BOT_TOKEN=123456789:ABCdefGHIjklMNOpqrsTUVwxyz
+
+# Имя бота (без @)
+BOT_USERNAME=yourbotname
+
+# ID канала для проверки подписки (с @ или числовой ID)
+CHANNEL_ID=@yourchannel
+
+# URL канала
+CHANNEL_URL=https://t.me/yourchannel
+
+# URL WebApp (где размещен фронтенд)
+WEBAPP_URL=https://yourdomain.com
+
+# URL Backend API
+BACKEND_URL=https://api.yourdomain.com
+
