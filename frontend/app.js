@@ -235,9 +235,9 @@ function selectAnswer(role) {
             showQuestion();
         }, 200);
     } else {
-        // Тест завершен, показываем результат
+        // Тест завершен, показываем экран подписки
         setTimeout(() => {
-            showResult();
+            showScreen('subscription-screen');
         }, 300);
     }
 }
@@ -249,40 +249,15 @@ async function checkSubscription() {
     btn.textContent = translations[currentLang].checking;
     btn.disabled = true;
     
-    try {
-        // ВРЕМЕННО: пропускаем проверку, просто показываем результат
-        // После деплоя backend раскомментируйте код ниже
-        
-        /*
-        const initData = tg.initData;
-        const response = await fetch(`${config.backendUrl}/check-subscription`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                initData: initData,
-                channelId: config.channelId
-            })
-        });
-        const result = await response.json();
-        if (!result.subscribed) {
-            alert(translations[currentLang].not_subscribed);
-            return;
-        }
-        */
-        
-        // Временно пропускаем проверку
+    // Просто показываем результат (проверка отключена)
+    setTimeout(() => {
         if (tg.HapticFeedback) {
             tg.HapticFeedback.notificationOccurred('success');
         }
-        showResult();
-        
-    } catch (error) {
-        console.error('Error checking subscription:', error);
-        showResult(); // Показываем результат даже при ошибке
-    } finally {
         btn.textContent = originalText;
         btn.disabled = false;
-    }
+        showResult();
+    }, 1000);
 }
 
 // Показать результат
