@@ -1,0 +1,15 @@
+ПОЛУЧЕНИЕ ТОКЕНА:
+
+1. Откроется браузер (или откройте): https://github.com/settings/tokens/new
+2. Войдите: crooked3 / Stormloh00s123S
+3. Название: Dota-Test-Deploy
+4. Галочки: repo, workflow (уже выбраны)
+5. Нажмите "Generate token" внизу
+6. СКОПИРУЙТЕ токен (начинается с ghp_...)
+
+ЗАТЕМ:
+gh auth login --with-token
+(вставьте токен и Enter)
+
+gh repo create dota-test --public --source=. --push
+

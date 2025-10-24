@@ -1,0 +1,24 @@
+ФИНАЛЬНЫЕ ШАГИ:
+
+1. Откройте https://github.com/new
+2. Войдите: crooked3
+3. Repository name: dota-test
+4. Public
+5. Нажмите "Create repository"
+
+6. В терминале:
+   git push -u origin main
+   
+   Логин: crooked3
+   Пароль: ghp_ТОКЕН (создайте на github.com/settings/tokens/new)
+
+7. Включите Pages:
+   Settings → Pages → Source: main → folder: /frontend → Save
+
+8. Через 2 минуты будет: https://crooked3.github.io/dota-test/
+
+9. Обновите бота:
+   frontend/app.js → backendUrl замените на Railway URL
+
+ВСЕ ГОТОВО! Код закоммичен, осталось только создать репозиторий на GitHub и запушить.
+
