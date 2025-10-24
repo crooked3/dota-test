@@ -235,9 +235,9 @@ function selectAnswer(role) {
             showQuestion();
         }, 200);
     } else {
-        // Тест завершен, проверяем подписку
+        // Тест завершен, показываем результат
         setTimeout(() => {
-            showScreen('subscription-screen');
+            showResult();
         }, 300);
     }
 }
