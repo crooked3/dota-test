@@ -63,11 +63,9 @@ let scores = {
 
 // Конфигурация
 const config = {
-    channelUrl: 'https://t.me/yourchannel',
-    channelId: '@yourchannel',
-    backendUrl: window.location.hostname === 'localhost' 
-        ? 'http://localhost:5000' 
-        : 'https://dota-test-production.up.railway.app' // После деплоя Railway замените
+    channelUrl: 'https://t.me/RoleMind',
+    channelId: '@RoleMind',
+    backendUrl: 'http://localhost:5000' // Backend пока на localhost
 };
 
 // Инициализация
