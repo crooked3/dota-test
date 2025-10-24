@@ -250,44 +250,35 @@ async function checkSubscription() {
     btn.disabled = true;
     
     try {
-        // Получаем initData для валидации на backend
-        const initData = tg.initData;
+        // ВРЕМЕННО: пропускаем проверку, просто показываем результат
+        // После деплоя backend раскомментируйте код ниже
         
+        /*
+        const initData = tg.initData;
         const response = await fetch(`${config.backendUrl}/check-subscription`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 initData: initData,
                 channelId: config.channelId
             })
         });
-        
         const result = await response.json();
-        
-        if (result.subscribed) {
-            // Подписка подтверждена, показываем результат
-            if (tg.HapticFeedback) {
-                tg.HapticFeedback.notificationOccurred('success');
-            }
-            showResult();
-        } else {
-            // Пользователь еще не подписан
-            if (tg.HapticFeedback) {
-                tg.HapticFeedback.notificationOccurred('error');
-            }
+        if (!result.subscribed) {
             alert(translations[currentLang].not_subscribed);
+            return;
         }
+        */
+        
+        // Временно пропускаем проверку
+        if (tg.HapticFeedback) {
+            tg.HapticFeedback.notificationOccurred('success');
+        }
+        showResult();
+        
     } catch (error) {
         console.error('Error checking subscription:', error);
-        // В режиме разработки пропускаем проверку
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            console.log('Development mode: skipping subscription check');
-            showResult();
-        } else {
-            alert('Error checking subscription');
-        }
+        showResult(); // Показываем результат даже при ошибке
     } finally {
         btn.textContent = originalText;
         btn.disabled = false;
