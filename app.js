@@ -211,13 +211,18 @@ function showQuestion() {
         const button = document.createElement('button');
         button.className = 'answer-btn';
         button.textContent = answerText;
-        button.addEventListener('click', () => selectAnswer(answer.role));
+        button.addEventListener('click', (e) => selectAnswer(answer.role, e.target));
         answersContainer.appendChild(button);
     });
 }
 
 // Выбор ответа
-function selectAnswer(role) {
+function selectAnswer(role, buttonElement) {
+    // Убираем фокус с кнопки
+    if (buttonElement) {
+        buttonElement.blur();
+    }
+    
     // Добавляем балл к роли
     scores[role]++;
     answers.push(role);
