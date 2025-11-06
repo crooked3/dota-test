@@ -65,7 +65,7 @@ let scores = {
 const config = {
     channelUrl: 'https://t.me/RoleMind',
     channelId: '@RoleMind',
-    backendUrl: 'http://localhost:5000' // Backend пока на localhost
+    backendUrl: 'https://your-railway-app.up.railway.app' // Обнови на URL Railway после развертывания
 };
 
 // Инициализация
