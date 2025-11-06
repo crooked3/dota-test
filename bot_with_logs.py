@@ -49,19 +49,14 @@ async def handle_start(chat_id, username):
 
 Нажми кнопку ниже чтобы начать!"""
     
-    # Пока WebApp на localhost - отправляем без кнопки
-    # После деплоя раскомментируйте и укажите реальный URL
-    # reply_markup = {
-    #     "inline_keyboard": [[
-    #         {"text": "🎮 Начать тест", "web_app": {"url": "https://your-domain.com"}}
-    #     ]]
-    # }
+    # WebApp кнопка
+    reply_markup = {
+        "inline_keyboard": [[
+            {"text": "🎮 Начать тест", "web_app": {"url": "https://crooked3.github.io/dota-test/"}}
+        ]]
+    }
     
-    message += "\n\n⚠️ Бот готов к работе!"
-    message += "\n📱 Для полноценной работы нужно развернуть WebApp на публичном HTTPS домене."
-    message += "\n\nПодробности в README.md"
-    
-    await send_message(chat_id, message)
+    await send_message(chat_id, message, reply_markup)
 
 async def get_updates():
     """Получение обновлений"""
